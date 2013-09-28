@@ -9,7 +9,7 @@ class String
     re_separator = Regexp.escape(separator)
     str = pl2us(str)
     str.gsub!(/ /, separator)
-    str.gsub!(/[^\x00-\x7F]+/, '')
+    str.gsub!(/[^\x00-\x9A]+/, '')
     str.gsub!(/[^a-z0-9\-_\+]+/i, separator)
     str.gsub!(/#{re_separator}{2,}/, separator)
     str.gsub!(/^#{re_separator}|#{re_separator}$/, '')
